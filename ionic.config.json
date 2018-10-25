@@ -1,0 +1,7 @@
+{
+  "name": "boardGame",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

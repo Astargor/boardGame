@@ -3,21 +3,37 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>List</ion-title>
+    <ion-title>Civilization</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content>
-  <ion-list>
-    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
-      <ion-icon [name]="item.icon" item-start></ion-icon>
-      {{item.title}}
-      <div class="item-note" item-end>
-        {{item.note}}
-      </div>
-    </button>
-  </ion-list>
-  <div *ngIf="selectedItem" padding>
-    You navigated here from <b>{{selectedItem.title}}</b>
-  </div>
+<ion-content >
+      <br>
+      <ion-img style="width: 80px; height: 80px;" class="center" src="../assets/imgs/{{imagen}}.png"></ion-img>
+      <br>
+      <button ion-button secondary class="center" (click)='cambiaEvento()'>Cambiar Evento</button>
+      <br>
+      <ion-item>
+          <ion-range min="0" max="24" step="1" snaps="true" [(ngModel)]="warmth" color="danger">
+            <ion-icon range-left small color="danger" name="ios-bonfire"></ion-icon>
+            <ion-icon range-right color="danger" name="ios-bonfire"></ion-icon>
+          </ion-range>
+      </ion-item>
+      <p class="centerText">Nivel Tecnologico actual</p>
+      <p class="centerText">{{warmth}}</p>   
+      <ion-toolbar>          
+          <ion-range min="0" max="24" step="1" snaps="true" [(ngModel)]="warmth" color="danger">
+              <ion-icon range-left small color="danger" name="ios-bonfire"></ion-icon>
+              <ion-icon range-right color="danger" name="ios-bonfire"></ion-icon>
+            </ion-range>
+            <ion-row>
+                <ion-col>
+                  0
+                </ion-col>
+                <ion-col>
+                  II
+                </ion-col>                
+              </ion-row>
+        </ion-toolbar>
+      <!--ios-arrow-dropup-circle  -->
 </ion-content>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,Input, Output, EventEmitter } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
 @Component({
@@ -7,25 +7,46 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class ListPage {
   selectedItem: any;
+  imagen:string;
+  numeroEvento:number;
+  eventos:Array<{images:string,numero:number}>;
   icons: string[];
-  items: Array<{title: string, note: string, icon: string}>;
+  warmth:number;
+  
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     // If we navigated to this page, we will have an item available as a nav param
-    this.selectedItem = navParams.get('item');
+    this.selectedItem = navParams.get('item');    
+    this.numeroEvento = 0;
+    this.eventos = [{images:"sleep",numero:1},{images:"viking",numero:2},{images:"box",numero:3},{images:"viking",numero:4},{images:"axe",numero:5}];
+    this.imagen =  this.eventos[this.numeroEvento].images;
+    this.warmth = 0;
+  
+  }
 
-    // Let's populate this page with some filler content for funzies
-    this.icons = ['flask', 'wifi', 'beer', 'football', 'basketball', 'paper-plane',
-    'american-football', 'boat', 'bluetooth', 'build'];
+  cambiaEvento(){
 
-    this.items = [];
-    for (let i = 1; i < 11; i++) {
-      this.items.push({
-        title: 'Item ' + i,
-        note: 'This is item #' + i,
-        icon: this.icons[Math.floor(Math.random() * this.icons.length)]
-      });
+    if(this.numeroEvento != 5){
+
+      if(this.numeroEvento == 0){
+
+        this.numeroEvento = this.numeroEvento + 1;
+      }
+
+      this.imagen = this.eventos[this.numeroEvento].images;
+
+       this.numeroEvento = this.numeroEvento + 1;
+
+   
+
+    }else{
+
+      this.numeroEvento = 0;
+
+      this.imagen = this.eventos[this.numeroEvento].images;
+
     }
+
   }
 
   itemTapped(event, item) {

@@ -13,96 +13,20 @@
       <br>
       <button ion-button secondary class="center" (click)='cambiaEvento()'>Cambiar Evento</button>
       <br>
-      <ion-item>
-          <ion-range min="0" max="24" step="1" snaps="true" [(ngModel)]="warmth" color="danger">
-            <ion-icon range-left small color="danger" name="ios-bonfire"></ion-icon>
-            <ion-icon range-right color="danger" name="ios-bonfire"></ion-icon>
-          </ion-range>
-      </ion-item>
-      <p class="centerText">Nivel Tecnologico actual</p>
+      
+      <p class="centerText">Nivel Tecnológico actual</p>
       <p class="centerText">{{warmth}}</p>   
       <ion-toolbar>          
           <ion-range min="0" max="24" step="1" snaps="true" [(ngModel)]="warmth" color="danger">
               <ion-icon range-left small color="danger" name="ios-bonfire"></ion-icon>
               <ion-icon range-right color="danger" name="ios-bonfire"></ion-icon>
             </ion-range>
-            <ion-row>
-                <ion-col>
-                  0
-                </ion-col>
-                <ion-col>
-                  
-                </ion-col>
-                <ion-col>
-                  
-                </ion-col>
-                <ion-col>
-                  II
-                </ion-col>
-                <ion-col>
-                
-                </ion-col>
-                <ion-col>
-                  
-                </ion-col>
-                <ion-col>
-                  II
-                </ion-col>
-                <ion-col>
-                  
-                </ion-col>
-                <ion-col>
-                  
-                </ion-col>
-                <ion-col>
-                  
-                </ion-col>
-                <ion-col>
-                  III
-                </ion-col>
-                <ion-col>
-                  
-                </ion-col>
-                <ion-col>
-                  
-                </ion-col>
-                <ion-col>
-                  
-                </ion-col>
-                <ion-col>
-                  III
-                </ion-col>
-                <ion-col>
-                  
-                </ion-col>
-                <ion-col>
-                  
-                </ion-col>
-                <ion-col>
-                  
-                </ion-col>
-                <ion-col>
-                  
-                </ion-col>
-                <ion-col>
-                  IV
-                </ion-col>
-                <ion-col>
-                  
-                </ion-col>
-                <ion-col>
-                  
-                </ion-col>
-                <ion-col>
-                  
-                </ion-col>
-                <ion-col>
-                  
-                </ion-col> 
-                <ion-col>
-                  IV
-                </ion-col>                
-              </ion-row>
         </ion-toolbar>
       <!--ios-arrow-dropup-circle  -->
+      <P *ngIf="warmth > 2" class="centerText">NIVEL 3: Coge una carta de tecnología II</P>
+      <P *ngIf="warmth > 5" class="centerText">NIVEL 6:Coge segunda carta de tecnología II</P>
+      <P *ngIf="warmth > 9" class="centerText">NIVEL 10:Coge una carta de tecnología III</P>
+      <P *ngIf="warmth > 13" class="centerText">NIVEL 14:Coge segunda carta de tecnología III</P>
+      <P *ngIf="warmth > 18" class="centerText">NIVEL 19:Coge una carta de tecnología IV</P>
+      <P *ngIf="warmth == 24" class="centerText">NIVEL 24:Coge segunda carta de tecnología IV</P>
 </ion-content>

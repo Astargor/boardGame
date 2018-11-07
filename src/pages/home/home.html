@@ -11,5 +11,57 @@
   <h3>BOARD GAME ADDONS</h3>
   <p>25/10/2018 : Añadido el juego Civilization new dawn</p>
   <p>Contenido: Dial de eventos y de tecnologia</p>
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+ <!-- <button ion-button secondary menuToggle>Toggle Menu</button>-->
+ <button ion-button full  (click)='registrar()'>Crear Usuario</button>
+
+ <div *ngIf="registra == false">
+  <ion-list>
+
+    <ion-item>
+      <ion-label>Username</ion-label>
+      <ion-input  [(ngModel)]='nombre'  type="text"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>Password</ion-label>
+      <ion-input  [(ngModel)]='password' type="password"></ion-input>
+    </ion-item>
+  
+  </ion-list>
+  
+  <div padding>
+    <button ion-button full  (click)='registrarUser()'>Registrar</button>
+  </div>
+ </div>
+ 
+ 
+ <br>
+
+ 
+
+ <div style="margin-top:20px;">
+  <button ion-button full color="secondary" (click)= 'logea()'>Login</button>
+ </div>
+ 
+ <div style="margin-top:20px;" *ngIf="login == false">
+  <ion-list>
+
+    <ion-item>
+      <ion-label>Username</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>Password</ion-label>
+      <ion-input type="password"></ion-input>
+    </ion-item>
+  
+  </ion-list>
+  
+  <div padding>
+    <button ion-button full color="secondary">Entra</button>
+  </div>
+ </div>
+
+
 </ion-content>
